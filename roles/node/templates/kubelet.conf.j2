@@ -1,0 +1,9 @@
+KUBELET_OPTS="--logtostderr=false \
+--v=4 \
+--log-dir={{ k8s_work_dir }}/logs \
+--hostname-override={{ node_name }} \
+--kubeconfig={{ k8s_work_dir }}/cfg/kubelet.kubeconfig \
+--bootstrap-kubeconfig={{ k8s_work_dir }}/cfg/bootstrap.kubeconfig \
+--config={{ k8s_work_dir }}/cfg/kubelet-config.yml \
+--cert-dir={{ k8s_work_dir }}/ssl \
+--container-runtime-endpoint=unix:///var/run/cri-dockerd.sock"
